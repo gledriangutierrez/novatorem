@@ -111,7 +111,7 @@ def makeSVG(data, background_color, border_color):
         recentPlays = recentlyPlayed()
         recentPlaysLength = len(recentPlays["items"])
         itemIndex = random.randint(0, recentPlaysLength - 1)
-        item = recentPlays["items"][itemIndex]["track"]
+        item = recentPlays["items"][0]["track"]
     else:
         item = data["item"]
         currentStatus = "Vibing to:"
