@@ -22,7 +22,7 @@ FALLBACK_THEME = "spotify.html.j2"
 REFRESH_TOKEN_URL = "https://accounts.spotify.com/api/token"
 NOW_PLAYING_URL = "https://api.spotify.com/v1/me/player/currently-playing"
 RECENTLY_PLAYING_URL = (
-    "https://api.spotify.com/v1/me/player/recently-played?limit=10"
+    "https://api.spotify.com/v1/me/player/recently-played?limit=1"
 )
 
 app = Flask(__name__)
@@ -109,8 +109,8 @@ def makeSVG(data, background_color, border_color):
         #contentBar = "" #Shows/Hides the EQ bar if no song is currently playing
         currentStatus = "Was playing:"
         recentPlays = recentlyPlayed()
-        recentPlaysLength = len(recentPlays["items"])
-        itemIndex = random.randint(0, recentPlaysLength - 1)
+        #recentPlaysLength = len(recentPlays["items"])
+        #itemIndex = random.randint(0, recentPlaysLength - 1)
         item = recentPlays["items"][0]["track"]
     else:
         item = data["item"]
